@@ -4,7 +4,8 @@ export default function App() {
   const [tasks, setTasks] = useState([]);
   const [title, setTitle] = useState("");
 
-  const API_URL = "http://127.0.0.1:8000/api/tasks/";
+  // ✅ PRODUCTION BACKEND (PythonAnywhere)
+  const API_URL = "https://yourusername.pythonanywhere.com/api/tasks/";
 
   // Fetch tasks
   useEffect(() => {
@@ -46,7 +47,6 @@ export default function App() {
     setTasks(updatedTasks);
   };
 
-  // Separate tasks
   const pendingTasks = tasks.filter(
     (task) => !task.is_completed
   );
@@ -67,7 +67,7 @@ export default function App() {
           </h1>
 
           <p className="text-slate-500 mt-2">
-            Task Management System 
+            Task Management System
           </p>
         </div>
 
